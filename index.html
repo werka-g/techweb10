@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artykuły</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" crossorigin src="/techweb10/assets/index-Bc1D49CK.js"></script>
+</head>
+<body>
+
+
+  <h1>Lista artykułów</h1>
+
+  <select id="sort-select">
+    <option value="created_at.asc">data rosnąco</option>
+    <option value="created_at.desc">data malejąco</option>
+    <option value="title.asc">alfabetycznie</option>
+  </select>
+
+  <div id="article-list"></div>
+
+  <h2>Dodaj nowy artykuł</h2>
+  <form id="article-form">
+    <input name="title" placeholder="Tytuł" required />
+    <input name="subtitle" placeholder="Podtytuł" required />
+    <input name="author" placeholder="Autor" required />
+    <textarea name="content" placeholder="Treść" required></textarea>
+    <input type="datetime-local" name="created_at" />
+    <button type="submit">Dodaj artykuł</button>
+  </form>
+
+</body>
+</html>
