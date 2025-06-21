@@ -36,6 +36,27 @@ async function fetchArticles() {
 
 fetchArticles()
 
+document.getElementById('articleForm').addEventListener('submit', async (e) => {
+  e.preventDefault()
+  const title = document.getElementById('title').value
+  const subtitle = document.getElementById('subtitle').value
+  const author = document.getElementById('author').value
+  const content = document.getElementById('content').value
+
+  const { error } = await supabase.from('articles').insert([
+    { title, subtitle, author, content }
+  ])
+
+  if (error) {
+    alert('Błąd przy dodawaniu artykułu')
+    console.error(error)
+  } else {
+    alert('Artykuł dodany!')
+    e.target.reset()
+    fetchArticles() // Odśwież listę
+  }
+})
+
 
 document.querySelector('#app').innerHTML = `
   <div>
