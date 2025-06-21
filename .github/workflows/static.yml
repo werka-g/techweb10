@@ -3,14 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      -main
-      
+      - main
 
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: github-pages 
     permissions:
       contents: write
       pages: write
