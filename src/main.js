@@ -2,6 +2,12 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = 'https://cbouspjmailotmgxqlpt.supabase.co'; 
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNib3VzcGptYWlsb3RtZ3hxbHB0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgzNTM5MjcsImV4cCI6MjA2MzkyOTkyN30.5a4Hv2iHxW-LvW91WffHyowJIezrVqv5g5mqBzs13r4';
+export const supabase = createClient(supabaseUrl, supabaseKey);
+
 
 document.querySelector('#app').innerHTML = `
   <div>
